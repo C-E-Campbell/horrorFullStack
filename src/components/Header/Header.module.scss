@@ -1,0 +1,64 @@
+.header {
+  background: rgb(0, 0, 0);
+  width: 100%;
+  color: rgb(223, 223, 223);
+  height: 50px;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.innerHeaderContainer {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 80%;
+}
+
+.header_Logo_Btn {
+  height: 40px;
+  width: 250px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('./smallLogo.png');
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 55%;
+
+  a {
+    margin: auto 10px;
+  }
+}
+@media (min-width: 580px) {
+  .toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .innerHeaderContainer {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 580px) {
+  .innerHeaderContainer {
+    max-width: 90%;
+  }
+
+  .linkContainer {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .header_Logo_Btn {
+    height: 65px;
+    width: 170px;
+  }
+}
