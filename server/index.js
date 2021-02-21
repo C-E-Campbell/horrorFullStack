@@ -12,7 +12,6 @@ const connect = async () => {
   })
     .then((db) => {
       app.set('db', db);
-      console.log(db);
       console.log('connected');
     })
     .catch((err) => console.log(err));
@@ -24,5 +23,5 @@ app.get('/', async (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(`Example app listening at http://localhost:${process.env.PORT}`);
+  console.log(`listening at http://localhost:${process.env.PORT}`);
 });
