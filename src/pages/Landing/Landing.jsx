@@ -8,11 +8,13 @@ export default function Landing() {
     <div>
       <Header />
       <section className={styles.heroSection}>
-        <h1>Can you live through the challenge?</h1>
-        <p>
-          <span>Tempt Fate. </span>Take the 100 day horror movie challenge.
-        </p>
-        <Link to="/signin">THE RULES</Link>
+        <div>
+          <h1>Can you live through the challenge?</h1>
+          <p>
+            <span>Tempt Fate. </span>Take the 100 day horror movie challenge.
+          </p>
+          <Link to="/signin">THE RULES</Link>
+        </div>
       </section>
     </div>
   );

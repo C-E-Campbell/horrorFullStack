@@ -5,9 +5,82 @@
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   h1,
   p {
     color: #fff;
+  }
+
+  div {
+    position: relative;
+    left: -150px;
+    top: -50px;
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+
+    a {
+      background-color: rgb(255, 129, 27);
+      padding: 5px 15px;
+      border-radius: 2px;
+      color: #000;
+      font-weight: 700;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .heroSection {
+    div {
+      left: -100px;
+      top: -50px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .heroSection {
+    div {
+      left: 10px;
+      top: -50px;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .heroSection {
+    div {
+      left: -10px;
+      top: -50px;
+
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .heroSection {
+    div {
+      left: -10px;
+      top: -50px;
+
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
   }
 }
