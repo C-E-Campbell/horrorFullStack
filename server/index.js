@@ -17,7 +17,7 @@ const connect = async () => {
     .catch((err) => console.log(err));
 };
 connect();
-
+app.use(express.json());
 app.get('/', async (req, res) => {
   res.send('Hello World!');
 });
