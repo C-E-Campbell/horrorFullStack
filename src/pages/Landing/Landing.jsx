@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 import Header from '../../components/Header/Header';
 import styles from './Landing.module.scss';
 import { Link } from 'react-router-dom';
