@@ -34,7 +34,7 @@ app.post('/api/login', async (req, res) => {
   const { user, pass } = req.body;
   const db = req.app.get('db');
   const profile = await db.check_for_user(user);
-  console.log(profile[0]);
+  // profile is an array of users in db with this specfic username, should only be one, must be unique
   if (profile[0]) {
     console.log('here');
     let checkPass = bcrypt.compareSync(pass, profile[0].password);
@@ -45,8 +45,22 @@ app.post('/api/login', async (req, res) => {
     } else {
       res
         .status(500)
-        .send(JSON.stringify({ call: 'login', status: 500, success: false }));
+        .send(
+          JSON.stringify({
+            call: 'login - password incorrect',
+            status: 500,
+            success: false,
+          })
+        );
     }
+  } else {
+    res.status(500).send(
+      JSON.stringify({
+        call: 'login - no user with that name',
+        status: 500,
+        success: false,
+      })
+    );
   }
 });
 
