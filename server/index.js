@@ -3,7 +3,7 @@ const express = require('express');
 const massive = require('massive');
 const passport = require('passport');
 const passportLocal = require('passport-local').Strategy;
-const cookieParser = requoire('cookie-parser');
+const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const expressSession = require('express-session');
@@ -36,7 +36,7 @@ app.use(
   })
 );
 app.use(
-  session({
+  expressSession({
     secret: 'guitar',
     resave: true,
     saveUninitialized: true,
@@ -48,8 +48,11 @@ app.post('/api/login', (req, res) => {
   console.log(req.body);
 });
 
-app.post('/api/register', (req, res) => {
-  console.log(req.body);
+app.post('/api/register', async (req, res) => {
+  const { user, pass } = req.body;
+  const db = req.app.get('db');
+  await db.register(user, pass);
+  res.status(200).send({ status: 200, success: true });
 });
 
 app.listen(process.env.PORT, () => {
