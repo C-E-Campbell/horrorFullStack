@@ -15,10 +15,12 @@ export default function Signup() {
   };
 
   const login = () => {
-    axios.post('/api/login', {
-      user: loginUserName,
-      pass: loginPassword,
-    });
+    axios
+      .post('/api/login', {
+        user: loginUserName,
+        pass: loginPassword,
+      })
+      .then((res) => console.log(res.data));
   };
 
   return (
