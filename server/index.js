@@ -29,22 +29,6 @@ connect();
 
 //middlewares
 app.use(express.json());
-app.use(
-  cors({
-    origin: 'http://localhost:8293',
-    credentials: true,
-  })
-);
-app.use(
-  expressSession({
-    secret: 'guitar',
-    resave: true,
-    saveUninitialized: true,
-  })
-);
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(cookieParser('guitar'));
 
 app.post('/api/login', async (req, res) => {
   const { user, pass } = req.body;
