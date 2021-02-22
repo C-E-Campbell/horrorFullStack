@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
-export default function Login() {
+export default function Signup() {
   useEffect(() => {
-    axios.get('/login');
+    axios.get('/api/register').then((res) => {});
   }, []);
   return (
     <div>
