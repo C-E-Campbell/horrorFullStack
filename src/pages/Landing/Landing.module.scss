@@ -35,6 +35,38 @@
     }
   }
 }
+
+.rules_section {
+  text-align: center;
+  color: #fff;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.rules_InnerContainer {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.rules_textContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.rules_buttonsContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.rules_moviesContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 50%);
+  grid-gap: 10px;
+  width: 50%;
+}
 @media (max-width: 1200px) {
   .heroSection {
     div {
